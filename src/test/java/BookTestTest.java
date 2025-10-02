@@ -47,7 +47,7 @@ class BookTest {
         String newSubject = "sci-fi";
         String newAuthor = "Douglas Adams";
         int newPageCount = 42;
-        LocalDate newDueDate = LocalDate.of(2026, 02, 23);
+        LocalDate newDueDate = LocalDate.of(2026, 2, 23);
 
         b.setIsbn(newIsbn);
         b.setTitle(newTitle);
