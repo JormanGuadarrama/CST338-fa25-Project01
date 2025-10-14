@@ -6,6 +6,8 @@ import java.util.Objects;
  * @author guada
  * @version 0.1.0
  * @since 10/9/2025
+ * groups books by subject and tracks how many copies of each book are stored.
+ *shelves can be listed with its contents in string format
  **/
 public class Shelf {
     public static final int SHELF_NUMBER_ = 0;
@@ -31,6 +33,7 @@ public class Shelf {
         return (count == null) ? -1 : count;
     }
 
+    // Adds one copy of the given book to this shelf, if it is already stored, increase count by 1.
     public Code addBook(Book book) {
         if (book == null) return Code.BOOK_RECORD_COUNT_ERROR;
 
@@ -54,6 +57,7 @@ public class Shelf {
         return Code.SUCCESS;
     }
 
+    // Removes one copy of the given book from this shelf, if there is nothing in shelf nothing is removed
     public Code removeBook(Book book) {
         if (book == null) return Code.BOOK_NOT_IN_INVENTORY_ERROR;
 
@@ -75,6 +79,7 @@ public class Shelf {
 
     }
 
+    // Builds a string of the shelf contents
     public String listBooks() {
         int total = 0;
         for (Integer c : getBooks().values()) {
